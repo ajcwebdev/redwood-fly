@@ -191,7 +191,7 @@ Your app is ready. Deploy with `flyctl deploy`
 Run `fly scale` to scale your memory to ensure you have a large enough VM.
 
 ```bash
-fly scale vm shared-cpu-1x --memory 1024
+fly scale vm shared-cpu-1x --memory 2048
 ```
 
 If you are on an M1 you will likely run into issues. You can add the `--remote-only` flag to build the Docker image with Fly's remote builder to avoid this issue and also speed up your build time.
