@@ -40,7 +40,7 @@ yarn rw prisma migrate dev
 yarn rw dev
 ```
 
-Your browser should open automatically to `http://localhost:8910` to see the web app.
+Open `http://localhost:8910/posts` to create a test post and return to `http://localhost:8910/` to see the result.
 
 ![01-localhost-test](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/evpn14ja5ffoov2blsem.png)
 
