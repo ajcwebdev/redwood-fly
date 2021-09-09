@@ -169,7 +169,7 @@ Inside `redwood.toml` set the `apiProxyPath` to the following with the name of y
 `fly launch` will open an interactive terminal session.
 
 ```bash
-fly launch
+fly launch --name redwood-fly
 ```
 
 Answer **Yes** to copy your configuration to the new app, select a region close to you, and select **No** to the question about deploying now.
@@ -182,7 +182,7 @@ Scanning source code
 Detected Dockerfile app
 Automatically selected personal organization: Anthony Campolo
 ? Select region: sjc (Sunnyvale, California (US))
-Created app wild-feather-1842 in organization personal
+Created app redwood-fly in organization personal
 Wrote config file fly.toml
 Your app is ready. Deploy with `flyctl deploy`
 ? Would you like to deploy now? No
