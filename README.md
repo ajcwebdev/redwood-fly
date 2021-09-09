@@ -1,5 +1,9 @@
 # Deploying Redwood with Docker on Fly
 
+Huge thanks to [Joshua Sierles](https://twitter.com/jsierles) for doing the majority of the heavy lifting here.
+
+### NOTE: This will not be the end state of deploying Redwood apps to Fly. We are still optimizing the build and there will be a `yarn rw deploy fly` command to set this up automatically. However, if you want to start spiking something out now, you can follow these steps manually.
+
 > **WARNING:** RedwoodJS software has not reached a stable version 1.0 and should not be considered suitable for production use. In the "make it work; make it right; make it fast" paradigm, Redwood is in the later stages of the "make it work" phase.
 
 ## Getting Started
