@@ -216,3 +216,124 @@ Monitoring Deployment
 ![02-redwood-fly-deployed](https://dev-to-uploads.s3.amazonaws.com/uploads/articles/w2snknghxnslppwxvq5l.png)
 
 Live example - https://redwood-fly.fly.dev/
+
+## Test your endpoint
+
+**Warning: As of Redwood v0.36.x, Redwood's API is [open by default](https://redwoodjs.com/docs/services#secure-services) unless you specify an [environment variable for secure services](https://redwoodjs.com/docs/services#enabling-secure-services). This will be changing very soon in one of the upcoming minor releases before the v1 release candidate. If you follow this tutorial as is, your endpoint will be [trollable](https://en.wiktionary.org/wiki/trollable).**
+
+Hit [https://redwood-fly.fly.dev/api/graphql](https://redwood-fly.fly.dev/api/graphql) with your favorite API tool or curl.
+
+### Check Redwood Version
+
+```graphql
+query REDWOOD_VERSION {
+  redwood {
+    version
+  }
+}
+```
+
+Output:
+
+```json
+{
+  "data": {
+    "redwood": {
+      "version": "0.36.4"
+    }
+  }
+}
+```
+
+### Query for all posts
+
+```graphql
+query POSTS {
+  posts {
+    id
+    title
+    body
+    createdAt
+  }
+}
+```
+
+Output:
+
+```json
+{
+  "data": {
+    "posts": [
+      {
+        "id": 1,
+        "title": "This is a post",
+        "body": "Yeah it is",
+        "createdAt": "2021-09-09T20:10:58.985Z"
+      }
+    ]
+  }
+}
+```
+
+### Create a post
+
+```graphql
+mutation CREATE_POST_MUTATION {
+  createPost(
+    input: {
+      title:"this is a title",
+      body:"this is a body"
+    }
+  ) {
+    id
+    title
+    body
+    createdAt
+  }
+}
+```
+
+Output:
+
+```json
+{
+  "data": {
+    "createPost": {
+      "id": 2,
+      "title": "this is a title",
+      "body": "this is a body",
+      "createdAt": "2021-09-20T02:00:24.899Z"
+    }
+  }
+}
+```
+
+### Delete a post
+
+```graphql
+mutation DELETE_POST_MUTATION {
+  deletePost(
+    id: 2
+  ) {
+    id
+    title
+    body
+    createdAt
+  }
+}
+```
+
+Output:
+
+```json
+{
+  "data": {
+    "deletePost": {
+      "id": 2,
+      "title": "this is a title",
+      "body": "this is a body",
+      "createdAt": "2021-09-20T02:00:24.899Z"
+    }
+  }
+}
+```
