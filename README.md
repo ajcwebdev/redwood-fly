@@ -219,7 +219,7 @@ Live example - https://redwood-fly.fly.dev/
 
 ## Test your endpoint
 
-**Warning: As of Redwood v0.36.x, Redwood's API is [open by default](https://redwoodjs.com/docs/services#secure-services) unless you specify an [environment variable for secure services](https://redwoodjs.com/docs/services#enabling-secure-services). This will be changing very soon in one of the upcoming minor releases before the v1 release candidate. If you follow this tutorial as is, your endpoint will be [trollable](https://en.wiktionary.org/wiki/trollable).**
+### Warning: As of Redwood v0.36.x, Redwood's API is [open by default](https://redwoodjs.com/docs/services#secure-services) unless you specify an [environment variable for secure services](https://redwoodjs.com/docs/services#enabling-secure-services). This will be changing very soon in one of the upcoming minor releases before the v1 release candidate. If you follow this tutorial as is, your endpoint will be [trollable](https://en.wiktionary.org/wiki/trollable).
 
 Hit [https://redwood-fly.fly.dev/api/graphql](https://redwood-fly.fly.dev/api/graphql) with your favorite API tool or curl.
 
