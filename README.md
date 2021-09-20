@@ -51,7 +51,7 @@ Open `http://localhost:8910/posts` to create a test post and return to `http://l
 ### Dockerfile
 
 ```Dockerfile
-FROM node:14-alpine as build
+FROM node:14-alpine as base
 
 WORKDIR /app
 
@@ -65,8 +65,12 @@ COPY redwood.toml .
 COPY graphql.config.js .
 COPY babel.config.js .
 
+FROM base as web_build
+
 COPY web web
 RUN yarn rw build web
+
+FROM base as api_build
 
 COPY api api
 RUN yarn rw build api
@@ -83,9 +87,9 @@ COPY graphql.config.js .
 COPY redwood.toml .
 COPY api api
 
-COPY --from=build /app/web/dist /app/web/dist
-COPY --from=build /app/api/dist /app/api/dist
-COPY --from=build /app/node_modules/.prisma /app/node_modules/.prisma
+COPY --from=web_build /app/web/dist /app/web/dist
+COPY --from=api_build /app/api/dist /app/api/dist
+COPY --from=api_build /app/node_modules/.prisma /app/node_modules/.prisma
 
 EXPOSE 8911
 
